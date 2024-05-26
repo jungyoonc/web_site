@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="user-scalable=no,initial-scale=1">
+<style>
+    /* 글자박스영역 */
+    .container {
+        margin-top: 65px;
+        margin-left: 180px;
+        width: auto;
+        height: auto;
+        border: 3px solid black;
+        background-color: rgb(198, 198, 198);
+    }
+    
+    /* 상단바영역 */
+    .top_bar {
+        background: rgb(111, 160, 86);
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 50px;
+    }
+    
+    /* 버튼영역 */
+    .section1Button {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        left: 50px;
+        top: 80px;
+        height: 35px;
+        width: 80px;
+    }
+    .section2Button {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        left: 50px;
+        top: 120px;
+        height: 35px;
+        width: 80px;
+    }
+    .section3Button {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        left: 50px;
+        top: 160px;
+        height: 35px;
+        width: 80px;
+    }
+    
+    body.div {
+        margin: 0 auto;
+        width: 400px;
+    } /* 글자영역 */
+    img {
+        position: absolute;
+        height: 310px;
+        left: 0px;
+        top: 50px;
+    } /* 그림영역 */
+
+    /* 세개로 나누기영역 */
+    .section {
+        display: none;
+    }
+    .active {
+        display: block;
+    }
+</style>
+</head>
+<body>
+    <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fe1.pxfuel.com%2Fdesktop-wallpaper%2F304%2F195%2Fdesktop-wallpaper-ryan-kakao-friends.jpg&type=ofullfill340_600_png">
+        
+    <div class="top_bar"></div>
+
+    <div class="container">
+        <div id="section1" class="section active">
+            <h1>안녕하세요 정윤찬입니다.</h1><br>
+            현재 2학년이고 21학번입니다.<br>
+            잘나온 사진이 없어서 라이언 사진으로 대체하였습니다.
+        </div>
+        <div id="section2" class="section">
+            제이름은 윤택할 윤 빛날 찬을 써서 정윤찬입니다.<br>
+            좋아하는 음식은 크게 없으나 싫어하는 음식을 크게 싫어하는 경향이 있습니다.<br>
+            특히나 오이를 제일 싫어하고 나머지는 고루고루 잘먹습니다.<br>
+            취미는 기타치기, 게임, 클라이밍, 축구 등등이 있습니다. <br>
+            저는 경기도 남양주에서 왔습니다. 시,도 치곤 큰 크기를 자랑하는 남양주는 산과 논밭으로 이루어진 농촌도 있고
+            4호선과 경춘선의 역주위 번화가로 이루어진 동네입니다.<br>
+            특산물로는 먹골배가 있는데 나주배와는 다르게 달달한 맛이 아닌 크기와 특유의 맛, 식감으로 유명한 배입니다.<br>
+        </div>
+        <div id="section3" class="section">
+            컴퓨터 공학과를 진학하면서 느끼는 것이 있습니다. 컴퓨터언어는 불쾌한 경험을 느끼게 한다는 것인데요.<br>
+            예시로 html을 예로 들면 원하는 구성과 성능을 구현하기 위해 언어를 짜면서 틀리거나,실수하는 경우가 때때로 
+            발생하는데 이경우 해결하는데 불친절하다 느낍니다.
+            <br>다른 학과와 다른점이라 생각합니다.
+        </div>
+    </div>
+
+    <button class="section1Button">인사말</button>
+    <button class="section2Button">나의소개-1</button>
+    <button class="section3Button">나의소개-2</button>
+
+    <script>
+        const section1Button = document.querySelector('.section1Button');
+        const section2Button = document.querySelector('.section2Button');
+        const section3Button = document.querySelector('.section3Button'); 
+
+        const section1 = document.getElementById('section1');
+        const section2 = document.getElementById('section2');
+        const section3 = document.getElementById('section3');
+
+        section1Button.addEventListener('click', () => {
+            section1.classList.add('active');
+            section2.classList.remove('active');
+            section3.classList.remove('active');
+        });
+
+        section2Button.addEventListener('click', () => {
+            section1.classList.remove('active');
+            section2.classList.add('active');
+            section3.classList.remove('active');
+        });
+
+        section3Button.addEventListener('click', () => {
+            section1.classList.remove('active');
+            section2.classList.remove('active');
+            section3.classList.add('active');
+        });
+    </script>
+</body>
+</html>
